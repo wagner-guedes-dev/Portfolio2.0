@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+:root{
+  --color-background: #282045;
+  --color-primary: #E0F953;
+  --color-secundary-background:#1e1834;
+  --color-paragraph: #828282;
+  --color-h1: #fff;
+}
+html{
+  scroll-behavior: smooth;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: var(--color-background);
+  font-family: 'Zen Dots', cursive;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}

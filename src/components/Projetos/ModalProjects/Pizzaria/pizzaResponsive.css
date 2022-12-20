@@ -1,0 +1,28 @@
+@media(max-width: 770px){
+    .responsive-button{
+        margin-top: 0px;
+        margin-bottom: 7px;
+    }
+    .modal-pizza-responsive{
+        padding: 5px !important;
+    }
+}
+@media(max-width: 490px){
+    
+    .text-pizza-responsive{
+        font-size: 0.9rem;
+    }
+}
+@media(max-width: 421px){
+    
+    .text-pizza-responsive{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width: 362px){
+    
+    .modal-pizza-responsive{
+        top:10%
+    }
+}
+

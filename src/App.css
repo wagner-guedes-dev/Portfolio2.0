@@ -1,0 +1,39 @@
+
+h1{
+  color: var(--color-h1);
+}
+p{
+  color: var(--color-paragraph);
+  padding: 5px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.title{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.hidden{
+  overflow: hidden !important;
+}
+@media(max-width: 1055px){
+  main{
+    margin: 0 15px;
+  }
+}
+@media(max-width:730px){
+  h1{
+      font-size: 1.8em;
+  }
+}
+@media(max-width:622px){
+  h1{
+      font-size: 1.5em;
+  }
+}
+

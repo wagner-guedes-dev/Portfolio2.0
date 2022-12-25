@@ -10,7 +10,7 @@ import img2 from '../../img/img2.png'
 const Sobre = () => {
 
   useEffect(()=>{
-    AOS.init({duration: 800})
+    AOS.init({duration: 1500})
   }, [])
 
   return (

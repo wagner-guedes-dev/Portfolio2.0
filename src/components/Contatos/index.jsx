@@ -11,7 +11,7 @@ const Contatos = () => {
 
   
   useEffect(()=>{
-    AOS.init({duration: 800})
+    AOS.init({duration: 1500})
   }, [])
 
   return (

@@ -4,23 +4,23 @@
     border-radius: 1.5rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 80%;
     margin: 0 auto;
-    height: 85%;
     position: fixed;
     left: 10%;
     top: 13%;
     -webkit-animation: fade-in-fwd 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: fade-in-fwd 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     min-width: 320px;
+    z-index: 1;
 }
 img{
     width: 500px;
 }
 .buttons-projects{
     display: flex;
-    margin-top: 110px;
+    margin-top: 80px;
+    margin-bottom: 10px;
 }
 .buttons-projects button{
     font-size: .8rem;
@@ -70,8 +70,9 @@ img{
 
 /* modal right */
 .right-modal{
-    height: 100%;
+
     margin-left: 20px;
+
 }
 .right-modal h1{
     font-size: 1.6rem;

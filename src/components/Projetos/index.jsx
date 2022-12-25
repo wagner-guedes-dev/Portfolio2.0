@@ -23,7 +23,7 @@ import ControleFinanceiro from './ModalProjects/ControleFinanceiro';
 const Projetos = (props) => {
 
   useEffect(()=>{
-    AOS.init({duration: 800})
+    AOS.init({duration: 1500})
   }, [])
   
 

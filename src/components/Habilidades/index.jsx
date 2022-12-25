@@ -10,7 +10,7 @@ import './habilidades.css'
 const Habilidades = () => {
 
   useEffect(()=>{
-    AOS.init({duration: 800})
+    AOS.init({duration: 1500})
   }, [])
 
   return (

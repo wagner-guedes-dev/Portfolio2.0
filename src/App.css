@@ -6,7 +6,8 @@ p{
   color: var(--color-paragraph);
   padding: 5px;
 }
-main{
+main,
+footer{
   display: flex;
   flex-direction: column;
   max-width: 1300px;
@@ -22,7 +23,8 @@ main{
   overflow: hidden !important;
 }
 @media(max-width: 1055px){
-  main{
+  main,
+  footer{
     margin: 0 15px;
   }
 }

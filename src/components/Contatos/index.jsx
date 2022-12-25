@@ -4,7 +4,15 @@ import './contato.css'
 
 const Contatos = () => {
   return (
-    <main id='contatos'><h1>Contatos</h1></main>
+    <footer id='contatos'>
+      <div>
+        <h1>Contatos</h1>
+      </div>
+      <div>
+        
+      </div>
+
+    </footer>
   )
 }
 

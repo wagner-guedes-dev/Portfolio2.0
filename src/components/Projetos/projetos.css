@@ -64,7 +64,7 @@
     opacity: 1;
 }
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.1) ;
 }
 .card img:hover + .ver-mais{
     opacity: 1;

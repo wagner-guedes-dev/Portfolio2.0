@@ -6,6 +6,7 @@
     justify-content: center;
     gap: 5rem 8rem;
     max-width: 1230px;
+    margin-bottom: 30px;
 }
 .box{
     text-align: center;
@@ -27,7 +28,7 @@
 }
 .box:hover{
     transform: scale(1.2);
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
 }
 @media(max-width: 450px){
     .cards{

@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
+import AOS from 'aos'
+
+import 'aos/dist/aos.css'
 import './sobre.css'
 import img2 from '../../img/img2.png'
 
 
 const Sobre = () => {
+
+  useEffect(()=>{
+    AOS.init({duration: 800})
+  }, [])
+
   return (
     <main id='sobre'>
       <div className='conteudo'>
@@ -33,8 +41,8 @@ const Sobre = () => {
       </div>
       
       <div className='sobre-mim title'>
-        <h1>Sobre mim</h1>
-        <p>Sou desenvolvedor front-end com experiência em React.js, JavaScript e consumo de APIs. Meu primeiro contato com a programação foi em 2020, quando conclui a matéria Programação de Computadores I na Universidade Federal de Ouro Preto. Fiquei extremamente fascinado pelo universo da tecnologia e decidi estudar linguagens voltadas para o desenvolvimento front-end.</p>
+        <h1 data-aos='fade-up'>Sobre mim</h1>
+        <p data-aos='fade-up'>Sou desenvolvedor front-end com experiência em React.js, JavaScript e consumo de APIs. Meu primeiro contato com a programação foi em 2020, quando conclui a matéria Programação de Computadores I na Universidade Federal de Ouro Preto. Fiquei extremamente fascinado pelo universo da tecnologia e decidi estudar linguagens voltadas para o desenvolvimento front-end.</p>
       </div>
     </main>
   )

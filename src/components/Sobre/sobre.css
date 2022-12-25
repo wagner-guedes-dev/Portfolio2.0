@@ -95,10 +95,11 @@ a{
     }
     .eu-img{
         width: 250px;
-        margin-top: 30px;
+        margin: 30px auto;
+        display: block;
     }
     .sobre-mim{
-        margin: 40px auto;
+        margin: 20px auto;
     }
     .buttons button{
         width: 100%;

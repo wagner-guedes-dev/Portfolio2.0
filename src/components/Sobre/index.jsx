@@ -19,8 +19,9 @@ const Sobre = () => {
             <a href='https://drive.google.com/file/d/1sfkOlV-wDZmSu3Ok8o-pgKRpRl7YOFwg/view?usp=sharing' target='_blank'>
               <button className='cv'>Download CV</button>
             </a>
-            
-            <button className='contato'>Entrar em contato</button>
+            <a href='#contatos'>
+              <button className='contato'>Entrar em contato</button>
+            </a>
           </div>
           
         </div> 

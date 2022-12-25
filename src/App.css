@@ -1,5 +1,6 @@
 
-h1{
+h1,
+h3{
   color: var(--color-h1);
 }
 p{

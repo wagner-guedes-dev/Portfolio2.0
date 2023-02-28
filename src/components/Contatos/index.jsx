@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 import { Icon } from '@iconify/react';
 
 import './contato.css'
+import arrow from '../../img/arrow-rigth.png'
 
 const Contatos = () => {
 
@@ -18,14 +19,14 @@ const Contatos = () => {
     <footer id='contatos'>
 
       <div className='title' data-aos='fade-up'>
-        <h1>Contatos</h1>
+        <h1><img src={arrow} className='arrow'/>Contatos</h1>
       </div>
 
       <div className='todos-contatos'>
 
         <div data-aos='fade-up'>
           <div className='box-contato'>
-            <a href='javascript:void(0)' >
+            <a href={null} >
               <Icon icon="mdi:email-outline" width="3rem" color='var(--color-primary)' />
               <h3>E-mail</h3>
               <p>wagnerguedes123@hotmail.com</p>

@@ -25,11 +25,13 @@
     border-bottom: 5px solid var(--color-primary);
     color: var(--color-primary);
     transition: .2s;
+    font-size: 1.3em;
 }
 .box:hover{
     transform: scale(1.2);
     letter-spacing: 3.5px;
 }
+
 @media(max-width: 450px){
     .cards{
         gap: 2rem;
@@ -38,6 +40,7 @@
         width: 8rem;
     }
     .box:hover{
-        letter-spacing: 1.5px;
+        transform: none;
+        letter-spacing: none;
     }
 }

@@ -24,6 +24,10 @@ footer{
 .hidden{
   overflow: hidden !important;
 }
+.arrow{
+  width: 20px;
+  margin-right: 5px;
+}
 @media(max-width: 1055px){
   main,
   footer{

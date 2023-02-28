@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root{
-  --color-background: #282045;
-  --color-primary: #E0F953;
-  --color-secundary-background:#1e1834;
-  --color-paragraph: #828282;
+  --color-background: #000000;
+  --color-primary: #00e7f9;
+  --color-secundary-background:#080808;
+  --color-paragraph: #78797a;
   --color-h1: #fff;
 }
 html{
@@ -16,7 +16,7 @@ html{
 }
 body{
   background-color: var(--color-background);
-  font-family: 'Zen Dots', cursive;
+  font-family: 'Bebas Neue', cursive;
   overflow-x: hidden;
   min-width: 320px;
 }

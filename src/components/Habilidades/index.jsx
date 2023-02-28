@@ -5,7 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Icon } from '@iconify/react';
 import './habilidades.css'
-
+import arrow from '../../img/arrow-rigth.png'
 
 const Habilidades = () => {
 
@@ -16,7 +16,7 @@ const Habilidades = () => {
   return (
     <main id='habilidades' >
         <div className='title' data-aos='fade-up'>
-           <h1>Habilidades</h1> 
+           <h1><img src={arrow} className='arrow'/>Habilidades</h1> 
         </div>
 
         <div className='cards'>
@@ -47,6 +47,13 @@ const Habilidades = () => {
               <Icon icon="carbon:logo-react" width="4rem" color='var(--color-primary)' />
             </div>
           </div>
+
+          <div data-aos='fade-up'>
+            <div className='box' >
+              <h5>React Native</h5>
+              <Icon icon="tabler:brand-react-native" width="4rem" color='var(--color-primary)' />
+            </div>
+          </div>
           
           <div data-aos='fade-up'>
             <div className='box' >
@@ -73,6 +80,13 @@ const Habilidades = () => {
             <div className='box' >
               <h5>GitHub</h5>
               <Icon icon="mdi:github" width="4rem" color='var(--color-primary)' />
+            </div>
+          </div>
+
+          <div data-aos='fade-up'>
+            <div className='box' >
+              <h5>Figma</h5>
+              <Icon icon="ph:figma-logo-fill" width="4rem" color='var(--color-primary)' />
             </div>
           </div>
           

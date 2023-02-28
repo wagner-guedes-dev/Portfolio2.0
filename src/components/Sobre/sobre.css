@@ -1,11 +1,19 @@
 .conteudo{
-    margin-top: 70px;
+    margin-top: 150px;
     display: flex;
     justify-content: space-around; 
     align-items: center;
+    padding: 50px;
+}
+.titles-sobre h1{
+    font-size: 3em;
+}
+.titles-sobre p{
+    font-size: 1.5em;
 }
 .color-name{
     color: var(--color-primary);
+    letter-spacing: .15em;
 }
 p{
     margin: 2px;
@@ -29,7 +37,7 @@ a{
     margin-right: 5px;
 }
 .cv{
-    background-image: linear-gradient(90deg, var(--color-primary) .2%, rgba(164, 221, 7, 0.975) 100%);
+    background-image: linear-gradient(90deg, var(--color-primary) .2%, #fff 100%);
 }
 .contato{
     background-color: rgba(255, 255, 255, 0);
@@ -49,17 +57,7 @@ a{
     margin: 70px auto !important;
     line-height: 1.5;
 }
-.typing{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid var(--color-primary); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 2px; /* Adjust as needed */
-    animation-delay: 1.5s;
-    animation: 
-    typing 3.5s steps(30, end),
-    blink-caret 1s step-end infinite;
-}
+
 .eu-img{
     cursor: pointer;
     transition: .5s;
@@ -109,15 +107,4 @@ a{
     }
 }
 
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--color-primary) }
-  }
-  
+

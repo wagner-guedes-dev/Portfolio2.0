@@ -20,6 +20,8 @@ import ListaDeTarefas from './ModalProjects/ListaDeTarefas';
 import QuizFrontEnd from './ModalProjects/QuizFrontEnd';
 import ControleFinanceiro from './ModalProjects/ControleFinanceiro';
 
+import arrow from '../../img/arrow-rigth.png'
+
 const Projetos = (props) => {
 
   useEffect(()=>{
@@ -96,12 +98,12 @@ const Projetos = (props) => {
 
   return (
     <main id='projetos'>
-        <h1 className='title' data-aos='fade-up'> Projetos </h1>
+        <h1 className='title' data-aos='fade-up'><img src={arrow} className='arrow'/> Projetos </h1>
 
             <div className='cards-projects'>
             {/* project pizza */}
             <div data-aos='fade-up'>
-              <div className='card'  onClick={podeClicar ? openPizza : '' }>
+              <div className='card'  onClick={()=>{if(podeClicar){openPizza()}} }>
                   
                   <div className='text'>
                     <p>Administrativo pizzaria</p>
@@ -122,7 +124,7 @@ const Projetos = (props) => {
 
             {/* project filmes */}
               <div data-aos='fade-up'>
-                <div className='card' onClick={podeClicar ? openflixWag : '' }>
+                <div className='card' onClick={()=> {if(podeClicar){openflixWag()}} }>
                   
                   <div className='text'>
                     <p>FlixWag</p>
@@ -142,7 +144,7 @@ const Projetos = (props) => {
             
             {/* project lista de tarefas */}
               <div data-aos='fade-up'>
-                <div className='card' onClick={podeClicar ? openListaDeTarefas : '' }>
+                <div className='card' onClick={()=>{if(podeClicar){openListaDeTarefas()} } }>
                   
                   <div className='text'>
                     <p>Lista de Tarefas</p>
@@ -162,7 +164,7 @@ const Projetos = (props) => {
 
             {/* project quiz */}
               <div data-aos='fade-up'>
-                <div className='card' onClick={podeClicar ? openQuiz : '' }>
+                <div className='card' onClick={()=>{if(podeClicar){openQuiz()} } }>
                   
                   <div className='text'>
                     <p>Quiz Front-End</p>
@@ -181,7 +183,7 @@ const Projetos = (props) => {
 
             {/*Project sistema financeiro*/}
              <div data-aos='fade-up'>
-              <div className='card' onClick={podeClicar ? openFinanceiro : '' }>
+              <div className='card' onClick={()=>{if(podeClicar){openFinanceiro()} }}>
                 <div className='text'>
                   <p>Controle Financeiro</p>
                     <Icon icon="carbon:logo-react" width="1.6rem" color='var(--color-primary)' />

@@ -1,29 +1,30 @@
 import React from 'react'
 import './Header.css'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import { useSpring, animated } from 'react-spring'
 
 import logo from '../../img/logo.png'
 
 const Header = (props) => {
   
    const [menuResponsive, setMenuResponsive] = useState(false)
-
-     function Sidebar() {
-         if(menuResponsive){
-           setMenuResponsive(!menuResponsive)
-           props.setScrol(false)
-        }else{
-            setMenuResponsive(!menuResponsive)
-            props.setScrol(true)
-        }
-    } 
-
-
-
-
+   const menuAnimation = useSpring({
+    height: menuResponsive ? '200px' : '0px',
+    opacity: menuResponsive ? 1 : 0,
+  })
     
+  function handleScroll() {
+    setMenuResponsive(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header>
@@ -34,46 +35,49 @@ const Header = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <a href={`${props.menuDisable ? '#sobre' : 'javascript:void(0)'}`}>Sobre</a>
+                            <a href='#sobre'>Sobre</a>
                         </li>
                         <li>
-                            <a href={`${props.menuDisable ? '#habilidades' : 'javascript:void(0)'}`}>Habilidades</a>
+                            <a href= '#habilidades'>Habilidades</a>
                         </li>
                         <li>
-                            <a href={`${props.menuDisable ? '#projetos' : 'javascript:void(0)'}`}>Projetos</a>
+                            <a href='#projetos'>Projetos</a>
                         </li>
                         <li>
-                            <a href={`${props.menuDisable ? '#contatos' : 'javascript:void(0)'}`}>Contatos</a>
+                            <a href='#contatos'>Contatos</a>
                         </li>
                     </ul>
                 </nav>
             </div>
             
-            <div className='hamburger'>
-                <Icon icon="ci:hamburger" width="45" color='var(--color-primary)' onClick={props.menuDisable ? Sidebar : ''}/>
+            <div className='hamburger' onClick={()=> {if(props.menuDisable){setMenuResponsive(!menuResponsive)}}}>
+                {menuResponsive && props.menuDisable ? (
+                    <Icon icon="material-symbols:close" width="45" style={{color:'var(--color-primary)'}} className='transition'/>
+                ):
+                (
+                    <Icon icon="ci:hamburger" width="45" style={{color:'var(--color-primary)'}} className='transition'/>
+                )}
             </div>
             
-            <div className='menuMobile'>
-                <nav className={menuResponsive ? 'block' : 'none'}>
-                    <ul>
-                        <li>
-                            <Icon icon="material-symbols:close" width="45" color='var(--color-primary)' onClick={Sidebar} className='x'/>
-                        </li>
-                        <li>
-                            <a href='#sobre' onClick={Sidebar}>Sobre</a>
-                        </li>
-                        <li>
-                            <a href='#habilidades' onClick={Sidebar}>Habilidades</a>
-                        </li>
-                        <li>
-                            <a href='#projetos' onClick={Sidebar}>Projetos</a>
-                        </li>
-                        <li>
-                            <a href='#contatos' onClick={Sidebar}>Contatos</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <animated.div style={menuAnimation} className={menuResponsive && props.menuDisable ? 'menuMobile' : 'none'}>
+                <nav>
+                        <ul>
+                            <li>
+                                <a href='#sobre' onClick={()=> setMenuResponsive(!menuResponsive)}>Sobre</a>
+                            </li>
+                            <li>
+                                <a href='#habilidades' onClick={()=> setMenuResponsive(!menuResponsive)}>Habilidades</a>
+                            </li>
+                            <li>
+                                <a href='#projetos' onClick={()=> setMenuResponsive(!menuResponsive)}>Projetos</a>
+                            </li>
+                            <li>
+                                <a href='#contatos' onClick={()=> setMenuResponsive(!menuResponsive)}>Contatos</a>
+                            </li>
+                        </ul>
+                    </nav>
+            </animated.div>
+           
             
            
     </header>

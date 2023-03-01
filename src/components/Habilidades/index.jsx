@@ -54,20 +54,7 @@ const Habilidades = () => {
               <Icon icon="tabler:brand-react-native" width="4rem" color='var(--color-primary)' />
             </div>
           </div>
-          
-          <div data-aos='fade-up'>
-            <div className='box' >
-              <h5>SASS</h5>
-              <Icon icon="cib:sass-alt" width="4rem" color='var(--color-primary)' />
-            </div>
-          </div>
-          
-          <div data-aos='fade-up'>
-            <div className='box' >
-              <h5>Bootstrap</h5>
-              <Icon icon="mdi:bootstrap" width="4rem" color='var(--color-primary)' />
-            </div>
-          </div>
+
           
           <div data-aos='fade-up'>
             <div className='box' >
@@ -83,12 +70,6 @@ const Habilidades = () => {
             </div>
           </div>
 
-          <div data-aos='fade-up'>
-            <div className='box' >
-              <h5>Figma</h5>
-              <Icon icon="ph:figma-logo-fill" width="4rem" color='var(--color-primary)' />
-            </div>
-          </div>
           
         </div>
         

@@ -26,6 +26,20 @@ const Header = (props) => {
     };
   }, []);
 
+  function handleClick() {
+    const element = document.getElementById('sobre');
+    const offset = 200;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <header>
             <div>
@@ -35,7 +49,7 @@ const Header = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <a href='#sobre'>Sobre</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> handleClick()}>Sobre</a>
                         </li>
                         <li>
                             <a href= '#habilidades'>Habilidades</a>
@@ -52,10 +66,10 @@ const Header = (props) => {
             
             <div className='hamburger' onClick={()=> {if(props.menuDisable){setMenuResponsive(!menuResponsive)}}}>
                 {menuResponsive && props.menuDisable ? (
-                    <Icon icon="material-symbols:close" width="45" style={{color:'var(--color-primary)'}} className='transition'/>
+                    <Icon icon="material-symbols:close" width="45" style={{color:'var(--color-background-secundary)'}} />
                 ):
                 (
-                    <Icon icon="ci:hamburger" width="45" style={{color:'var(--color-primary)'}} className='transition'/>
+                    <Icon icon="ci:hamburger" width="45" style={{color:'var(--color-primary)'}}/>
                 )}
             </div>
             
@@ -63,7 +77,7 @@ const Header = (props) => {
                 <nav>
                         <ul>
                             <li>
-                                <a href='#sobre' onClick={()=> setMenuResponsive(!menuResponsive)}>Sobre</a>
+                                <a onClick={()=> {setMenuResponsive(!menuResponsive); handleClick()}}>Sobre</a>
                             </li>
                             <li>
                                 <a href='#habilidades' onClick={()=> setMenuResponsive(!menuResponsive)}>Habilidades</a>

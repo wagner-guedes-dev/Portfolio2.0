@@ -1,48 +1,91 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import AOS from 'aos'
 
 import 'aos/dist/aos.css'
 import './sobre.css'
 import arrow from '../../img/arrow-rigth.png'
+import computer from '../../img/computer.png'
 
+import { Icon } from '@iconify/react';
 
 const Sobre = () => {
 
+  const [email, setEmail] = useState('wagnerguedes123@hotmail.com');
+  const [msnCopyEmail, setMsnCopyEmail] = useState('Copiar E-mail')
+
   useEffect(()=>{
-    AOS.init({duration: 1500})
+    AOS.init({duration: 2000})
   }, [])
 
+
+  function handleClick() {
+    const element = document.getElementById('sobre');
+    const offset = 200;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  function copiarTexto() {
+    const elemento = document.createElement('textarea');
+    elemento.value = email;
+    document.body.appendChild(elemento);
+    elemento.select();
+    document.execCommand('copy');
+    document.body.removeChild(elemento);
+
+    setMsnCopyEmail('E-mail copiado!');
+    setTimeout(() => {
+      setMsnCopyEmail('Copiar E-mail');
+    }, 3000);
+  }
+
   return (
-    <main id='sobre'>
-      <div className='conteudo'>
+    <main>
+      <div className='conteudo' >
         <div className='titles-sobre'>
           
-            <h1> Olá, eu sou</h1>
-            <h1 className='color-name'>Wagner Guedes</h1>
-            <p>Desenvolvedor Front-end</p>
+            <h1 data-aos='fade-up'> Olá, eu sou</h1>
+            <h1 data-aos='fade-up' className='color-name'>Wagner Guedes</h1>
+            <p data-aos='fade-up' style={{fontWeight: '700', fontSize: '1.5em'}}>Desenvolvedor Front-end.</p>
+            <p data-aos='fade-up' style={{marginTop: '15px', width: '80%', textAlign: 'center'}}>Fico feliz em vê-lo (a) por aqui. Espero que aproveite o conteúdo e que eu possa te ajudar de alguma forma.</p>
           
-          
-          <div className='buttons'>
-            <a href='https://drive.google.com/file/d/1sfkOlV-wDZmSu3Ok8o-pgKRpRl7YOFwg/view?usp=sharing' target='_blank'>
-              <button className='cv'>Download CV</button>
-            </a>
-            <a href='#contatos'>
-              <button className='contato'>Entrar em contato</button>
+          <div className='buttons' >
+            <a>
+              <button onClick={()=> handleClick()} data-aos='fade-up' className='cm'>Conhecer mais</button>
             </a>
           </div>
           
-        </div> 
-
-
+        </div>
       </div>
       
-      <div className='sobre-mim title'>
-        <h1 data-aos='fade-up'> <img src={arrow} className='arrow'/>Sobre mim</h1>
-        <p data-aos='fade-up'>
-          Meu nome é Wagner Willian Guedes sou um profissional em busca de uma oportunidade no mercado de desenvolvimento front-end. Com 21 anos de idade, optei por uma pausa na universidade federal para dedicar-me aos estudos e aprimoramentos das minhas habilidades no desenvolvimento web, onde adquiri conhecimento em HTML, CSS, JavaScript, SASS, ReactJS e React Native.
-          Desenvolvi diversos projetos pessoais e realizei alguns freeLancers, todos eles disponíveis em meu perfil do GitHub. Estou comprometido a aprender novas tecnologias e adquirir experiência em novos desafios. Sou apaixonado por tecnologia e acredito que o desenvolvimento front-end seja a área onde posso contribuir de forma significativa.
-          Procuro uma oportunidade para iniciar minha carreira profissional, disposto a colaborar em projetos inovadores e a trabalhar em equipe. Meu objetivo é crescer na área de desenvolvimento front-end e contribuir para o sucesso da empresa que me contratar.</p>
+      <div id='sobre' data-aos='fade-up' className='sobre-mim title'>
+        <h1> <img src={arrow} className='arrow'/>Desenvolvedor Front-End</h1>
+
+        <div  className='sobre-divisor'>
+          <div>
+            <h3>Desenvolvedor Front-end com experiências em React, React-native, e  VanillaJS.</h3>
+            <p style={{marginTop: '10px'}}>
+            Meu nome é Wagner, tenho 21 anos e atuo na área de desenvolvimento há mais de 1 ano. Possuo experiência como freelancer, mas estou buscando uma primeira oportunidade no mercado como desenvolvedor Jr.<br/>
+            Logo abaixo tem o meu currículo com informçôes mais detalhadas sobre mim. Se preferir, podemos marcar uma call atráves do meu e-mail que está disponibilizado.</p>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+              <button className='cv'>Baixar CV  <Icon icon="material-symbols:download" width="1.3rem" color='#000' /></button>
+              <button className='ce' onClick={()=>copiarTexto()}>{msnCopyEmail} {msnCopyEmail === 'Copiar E-mail' ?<Icon icon="material-symbols:content-copy-outline" width="1.3rem" color='#fff' /> : null}</button>
+            </div>
+            
+          </div>
+          <div>
+            <img src={computer} />
+          </div>
+        </div>
+        
       </div>
     </main>
   )

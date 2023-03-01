@@ -5,7 +5,6 @@ h3{
 }
 p{
   color: var(--color-paragraph);
-  padding: 5px;
 }
 main,
 footer{

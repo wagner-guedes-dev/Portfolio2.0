@@ -3,8 +3,6 @@ header{
     align-items: center;
     justify-content: space-around;
     height: 70px;
-    border-top: 3px solid var(--color-primary);
-    border-bottom: 3px solid var(--color-primary);
     background-color: var(--color-secundary-background);
     position: fixed;
     width: 100%;
@@ -25,19 +23,14 @@ header{
 }
 .menu nav ul li a{
     text-decoration: none;
-    color: var(--color-primary);
+    color: #fff;
     margin: auto 10px;
     font-size: 1.2rem;
+    font-weight: 400;
+    transition: all .3s;
 }
-.menu nav ul li:after{
-    display:block;
-    content: '';
-    border-bottom: solid 2px var(--color-primary);  
-    transform: scaleX(0);  
-    transition: transform 180ms ease-in-out;
-}
-.menu nav ul li:hover:after { 
-    transform: scaleX(1); 
+.menu nav ul li a:hover { 
+    color: var(--color-primary);
 }
 .hamburger{
     display: none;
@@ -68,7 +61,7 @@ header{
    }
    .menuMobile{
     display: block;
-    margin-top: 320px;
+    margin-top: 150px;
     margin-right: -20px;
     color: var(--color-primary);
     padding: 10px 30px;
@@ -86,8 +79,9 @@ header{
 .menuMobile nav ul li a{
     color: var(--color-secundary-background);
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: .05em;
+
 }
     /* .menuMobile nav{
     display:none;

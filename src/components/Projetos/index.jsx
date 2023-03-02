@@ -10,15 +10,13 @@ import './projetos.css'
 import pizzaria from '../../img/pizzaria.png'
 import flixwag from '../../img/flixwag.png'
 import listadetarefas from '../../img/listadetarefas.png'
-import quizimg from '../../img/quiz.png'
-import financeiro from '../../img/financeiro.png'
+
 
 
 import Pizzaria from './ModalProjects/Pizzaria';
 import Flixwag from './ModalProjects/Flixwag';
 import ListaDeTarefas from './ModalProjects/ListaDeTarefas';
-import QuizFrontEnd from './ModalProjects/QuizFrontEnd';
-import ControleFinanceiro from './ModalProjects/ControleFinanceiro';
+
 
 import arrow from '../../img/arrow-rigth.png'
 
@@ -162,43 +160,7 @@ const Projetos = (props) => {
                 </div>
               </div>
 
-            {/* project quiz */}
-              <div data-aos='fade-up'>
-                <div className='card' onClick={()=>{if(podeClicar){openQuiz()} } }>
-                  
-                  <div className='text'>
-                    <p>Quiz Front-End</p>
-                    <Icon icon="carbon:logo-react" width="1.6rem" color='var(--color-primary)' />
-                    <Icon icon="uiw:css3" width="1.6rem" color='var(--color-primary)' />
-                  </div>
-                  
-                  <img src={quizimg}/>
-
-                  <div className='ver-mais'>
-                    <button>Ver mais</button>
-                  </div>
-
-                </div>
-              </div>
-
-            {/*Project sistema financeiro*/}
-             <div data-aos='fade-up'>
-              <div className='card' onClick={()=>{if(podeClicar){openFinanceiro()} }}>
-                <div className='text'>
-                  <p>Controle Financeiro</p>
-                    <Icon icon="carbon:logo-react" width="1.6rem" color='var(--color-primary)' />
-                  <Icon icon="uiw:css3" width="1.6rem" color='var(--color-primary)' />
-                  <Icon icon="ic:sharp-storage" width="1.6rem" color='var(--color-primary)' />
-                </div>
-                  
-                <img src={financeiro}/>
-
-                <div className='ver-mais'>
-                  <button>Ver mais</button>
-                </div>
-
-                </div>
-              </div>
+           
 
 
              </div>
@@ -208,10 +170,7 @@ const Projetos = (props) => {
 
             {ListaDeTarefasModal ? (<ListaDeTarefas modal={ListaDeTarefasModal} setmodal={setListaDeTarefasModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
 
-            {quiz ? (<QuizFrontEnd modal={quiz} setmodal={setQuiz} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
-
-            {controlFinanceiro ? (<ControleFinanceiro modal={controlFinanceiro} setmodal={setControlFinanceiro} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
-            
+  
         
     </main>
   )

@@ -80,7 +80,7 @@ const Habilidades = () => {
 
           <div data-aos='fade-up' className='atribuicao'>
             <h3>Desenvolvimento Responsivo</h3>
-            <p>Aplicação web responsiva, disponível para todos os dispositivos móveis, tornando o site mais prático e acessível. Ou aplicações 100% mobile, como aplicativos.</p>
+            <p>Aplicação web responsiva, disponível para todos os dispositivos móveis, tornando o site mais prático e acessível.</p>
           </div>
 
           <div data-aos='fade-up' className='atribuicao'>

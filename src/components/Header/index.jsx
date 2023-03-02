@@ -87,7 +87,7 @@ const Header = (props) => {
                             <a style={{cursor: 'pointer'}} onClick={()=> handleClickProj()}>Projetos</a>
                         </li>
                         <li>
-                            <a href='#contatos'>Contatos</a>
+                            <a style={{cursor: 'pointer'}} href='#contatos'>Contatos</a>
                         </li>
                     </ul>
                 </nav>
@@ -106,16 +106,16 @@ const Header = (props) => {
                 <nav>
                         <ul>
                             <li>
-                                <a onClick={()=> {setMenuResponsive(!menuResponsive); handleClick()}}>Sobre</a>
+                                <a style={{cursor: 'pointer'}} onClick={()=> {setMenuResponsive(!menuResponsive); handleClickSobre()}}>Sobre</a>
                             </li>
                             <li>
-                                <a href='#habilidades' onClick={()=> setMenuResponsive(!menuResponsive)}>Habilidades</a>
+                                <a style={{cursor: 'pointer'}} onClick={()=> {setMenuResponsive(!menuResponsive);handleClickHab()} }>Habilidades</a>
                             </li>
                             <li>
-                                <a href='#projetos' onClick={()=> setMenuResponsive(!menuResponsive)}>Projetos</a>
+                                <a style={{cursor: 'pointer'}} onClick={()=> {setMenuResponsive(!menuResponsive);handleClickProj() }}>Projetos</a>
                             </li>
                             <li>
-                                <a href='#contatos' onClick={()=> setMenuResponsive(!menuResponsive)}>Contatos</a>
+                                <a style={{cursor: 'pointer'}} href='#contatos' onClick={()=> setMenuResponsive(!menuResponsive)}>Contatos</a>
                             </li>
                         </ul>
                     </nav>

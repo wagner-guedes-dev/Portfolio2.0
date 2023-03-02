@@ -26,6 +26,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -15px;
 }
 .cm{
     font-size: .8rem;
@@ -33,7 +34,7 @@ a{
     color: black;
     padding: 12px 27px;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
     margin-right: 5px;
@@ -53,7 +54,7 @@ a{
     color: black;
     width: 40%;
     padding: 12px 27px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
     margin-right: 5px;
@@ -86,6 +87,7 @@ a{
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    margin-bottom: 100px;
 }
 .sobre-divisor div img{
     width: 300px;
@@ -94,16 +96,22 @@ a{
     margin-left: 50px;
 }
 
-@media (max-width:920px){
-    .eu-img{
-        width: 320px;
-    }
-}
 @media(max-width: 840px){
     .sobre-divisor div img{
         width: 250px;
     }
 }
+
+@media(max-width: 640px){
+    .titles-sobre h1{
+        text-align: center;
+    }
+    .color-name{
+        margin-top: -30px;
+        margin-left: 0px;
+    }
+}
+
 @media(max-width: 765px){
     .sobre-divisor div img{
         display: none;
@@ -114,42 +122,27 @@ a{
     }
     .sobre-divisor div div button{
         margin-top: 20px;
+        margin-bottom: 70px;
     }
 }
 @media(max-width:730px){
     .buttons button{
         font-size: 0.8rem;
-        padding: 10px 20px;
-        
+        padding: 10px 20px; 
     }
 }
-@media(max-width:580px){
-    .cv, .ce{
-        width: 50%;
-    }
-}
+
 @media(max-width:555px){
-    .conteudo{
-        display: block;
-        margin: 0 auto;
-        margin-top: 70px;
-    }
-    .eu-img{
-        width: 250px;
-        margin: 30px auto;
-        display: block;
-    }
-    .sobre-mim{
-        margin: 20px auto;
-    }
-    .buttons button{
-        width: 100%;
-    }
     .buttons{
         flex-direction: column;
     }
 }
-@media(max-width:470px){
+@media(max-width:580px){
+    .titles-sobre h1{
+        font-size: 4em;
+    }
+}
+@media(max-width:555px){
     .cv, .ce{
         padding: 5px 18px;
     }
@@ -157,9 +150,32 @@ a{
         width: 95%;
     }
 }
-@media(max-width:360px){
-    .cv, .ce{
-        font-size: .65em;
+@media(max-width:430px){
+    .titles-sobre h1{
+        font-size: 3.4em;
+    }
+    .color-name{
+        margin-top: -25px;
+        margin-bottom: 10px;
+    }
+    .cm{
+        width: 250px;
+    }
+    .ce,
+    .cv{
+        width: 50%;
     }
 }
+@media(max-width:360px){
+    .titles-sobre h1{
+        font-size: 3em;
+    }
+    .cv,
+    .ce{
+        font-size: .6em;
+    }
+    
+}
+    
+
 

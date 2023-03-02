@@ -26,9 +26,38 @@ const Header = (props) => {
     };
   }, []);
 
-  function handleClick() {
+  //onclick para scrol ir ao local desejado ao click, const offset é a diferenca entre o top e o conteudo
+  function handleClickSobre() {
     const element = document.getElementById('sobre');
     const offset = 200;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  function handleClickHab() {
+    const element = document.getElementById('habilidades');
+    const offset = 100;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  function handleClickProj() {
+    const element = document.getElementById('projetos');
+    const offset = 100;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -49,13 +78,13 @@ const Header = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <a style={{cursor: 'pointer'}} onClick={()=> handleClick()}>Sobre</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickSobre()}>Sobre</a>
                         </li>
                         <li>
-                            <a href= '#habilidades'>Habilidades</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickHab()}>Habilidades</a>
                         </li>
                         <li>
-                            <a href='#projetos'>Projetos</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickProj()}>Projetos</a>
                         </li>
                         <li>
                             <a href='#contatos'>Contatos</a>

@@ -55,7 +55,7 @@ const Sobre = () => {
             <h1 data-aos='fade-up'> Olá, eu sou</h1>
             <h1 data-aos='fade-up' className='color-name'>Wagner Guedes</h1>
             <p data-aos='fade-up' style={{fontWeight: '700', fontSize: '1.5em'}}>Desenvolvedor Front-end.</p>
-            <p data-aos='fade-up' style={{marginTop: '15px', width: '80%', textAlign: 'center'}}>Fico feliz em vê-lo (a) por aqui. Espero que aproveite o conteúdo e que eu possa te ajudar de alguma forma.</p>
+            <p data-aos='fade-up' style={{margin: '15px auto', width: '80%', textAlign: 'center'}}>Fico feliz em vê-lo (a) por aqui. Espero que aproveite o conteúdo e que eu possa te ajudar de alguma forma.</p>
           
           <div className='buttons' >
             <a>
@@ -77,7 +77,7 @@ const Sobre = () => {
             Logo abaixo tem o meu currículo com informçôes mais detalhadas sobre mim. Se preferir, podemos marcar uma call atráves do meu e-mail que está disponibilizado.</p>
             <div style={{display: 'flex', justifyContent: 'center'}}>
               <button className='cv'>Baixar CV  <Icon icon="material-symbols:download" width="1.3rem" color='#000' /></button>
-              <button className='ce' onClick={()=>copiarTexto()}>{msnCopyEmail} {msnCopyEmail === 'Copiar E-mail' ?<Icon icon="material-symbols:content-copy-outline" width="1.3rem" color='#fff' /> : null}</button>
+              <button className='ce' onClick={()=>copiarTexto()}>{msnCopyEmail} {msnCopyEmail === 'Copiar E-mail' ? <Icon icon="material-symbols:content-copy-outline" width="1.3rem" color='#fff' /> : null}</button>
             </div>
             
           </div>

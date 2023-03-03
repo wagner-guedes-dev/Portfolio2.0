@@ -21,6 +21,7 @@ import ListaDeTarefas from './ModalProjects/ListaDeTarefas';
 import arrow from '../../img/arrow-rigth.png'
 
 const Projetos = (props) => {
+  const [podeClicar , setPodeClicar] = useState(true)
 
   useEffect(()=>{
     AOS.init({duration: 1500})
@@ -64,34 +65,22 @@ const Projetos = (props) => {
      }
     }
 
-
-
-    const [quiz, setQuiz ] = useState(false)
+    const DisableScrollOnMobile = () => {
+      useEffect(() => {
+        const handleTouchMove = (event) => {
+          event.preventDefault();
+        };
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
     
-    function openQuiz(){
-    if(quiz === false){
-      setQuiz(true)
-      props.setScrol(true)
-      setPodeClicar(false)
-      props.setMenuDisable(false)
-     }
-    }
-
-
-
-
-    const [controlFinanceiro, setControlFinanceiro ] = useState(false)
+        return () => {
+          document.removeEventListener('touchmove', handleTouchMove);
+        };
+      }, []);
     
-    function openFinanceiro(){
-    if(controlFinanceiro === false){
-      setControlFinanceiro(true)
-      props.setScrol(true)
-      setPodeClicar(false)
-      props.setMenuDisable(false)
-     }
-    }
+      return null;
+    };
 
-    const [podeClicar , setPodeClicar] = useState(true)
+
 
 
   return (
@@ -101,7 +90,7 @@ const Projetos = (props) => {
             <div className='cards-projects'>
             {/* project pizza */}
             <div data-aos='fade-up'>
-              <div className='card'  onClick={()=>{if(podeClicar){openPizza()}} }>
+              <div className='card'  onClick={()=>{if(podeClicar){openPizza(); DisableScrollOnMobile()}} }>
                   
                   <div className='text'>
                     <p>Administrativo pizzaria</p>
@@ -118,11 +107,11 @@ const Projetos = (props) => {
 
               </div>
             </div>
-              
+            {pizzaModal ? (<Pizzaria modal={pizzaModal} setmodal={setPizzaModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : null}  
 
             {/* project filmes */}
               <div data-aos='fade-up'>
-                <div className='card' onClick={()=> {if(podeClicar){openflixWag()}} }>
+                <div className='card' onClick={()=> {if(podeClicar){openflixWag(); DisableScrollOnMobile()}} }>
                   
                   <div className='text'>
                     <p>FlixWag</p>
@@ -139,10 +128,12 @@ const Projetos = (props) => {
 
                 </div>
               </div>
-            
+              {flixWagModal ? (<Flixwag modal={flixWagModal} setmodal={setflixWagModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : null}
+
+
             {/* project lista de tarefas */}
               <div data-aos='fade-up'>
-                <div className='card' onClick={()=>{if(podeClicar){openListaDeTarefas()} } }>
+                <div className='card' onClick={()=>{if(podeClicar){openListaDeTarefas(); DisableScrollOnMobile()} } }>
                   
                   <div className='text'>
                     <p>Lista de Tarefas</p>
@@ -159,16 +150,16 @@ const Projetos = (props) => {
 
                 </div>
               </div>
-
+              {ListaDeTarefasModal ? (<ListaDeTarefas modal={ListaDeTarefasModal} setmodal={setListaDeTarefasModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : null}
            
 
 
              </div>
-            {pizzaModal ? (<Pizzaria modal={pizzaModal} setmodal={setPizzaModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
+            
 
-            {flixWagModal ? (<Flixwag modal={flixWagModal} setmodal={setflixWagModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
+            
 
-            {ListaDeTarefasModal ? (<ListaDeTarefas modal={ListaDeTarefasModal} setmodal={setListaDeTarefasModal} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : ''}
+            
 
   
         

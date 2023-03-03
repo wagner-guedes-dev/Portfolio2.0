@@ -1,25 +1,25 @@
+
 .modal-projects{
     background-color: #202020;
     padding: 40px 40px 15px 40px;
     border-radius: 1.5rem 0;
     display: flex;
     justify-content: center;
-    width: 80%;
-    margin: 0 auto;
     position: fixed;
-    left: 10%;
-    top: 13%;
+    top: 18%;
+    left: 0; 
+    margin-left: 20% !important;
+    margin-right: 20% !important;
     -webkit-animation: fade-in-fwd 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: fade-in-fwd 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     min-width: 320px;
-    z-index: 1;
+    z-index: 999;
 }
 img{
     width: 450px;
 }
 .buttons-projects{
     display: flex;
-    margin-top: 80px;
     margin-bottom: 10px;
 }
 .buttons-projects button{
@@ -61,7 +61,7 @@ img{
 .images-modal{
     max-width: 500px;
     overflow: hidden;
-    cursor:grab;
+
     border-radius: 12px;
     margin-top: 30px;
 }
@@ -70,13 +70,14 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
     margin: 3px 3px;
 
 }
 .navigation-buttons button{
     background-color: transparent;
     border: 1px solid #f2f2f2;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
@@ -134,7 +135,31 @@ img{
     }
   }
   
+  @media(max-width: 1650px){
+    .modal-projects{
+        margin-left: 18% !important;
+        margin-right: 18% !important;
+    }
+}
+@media(max-width: 1500px){
+    .modal-projects{
+        margin-left: 16% !important;
+        margin-right: 16% !important;
+    }
+}
+@media(max-width: 1335px){
+    .modal-projects{
+        margin-left: 13% !important;
+        margin-right: 13% !important;
+    }
+}
 
+@media(max-width: 1225px){
+    .modal-projects{
+        margin-left: 11% !important;
+        margin-right: 11% !important;
+    }
+}
 @media(max-width: 1143px){
     .modal-projects{
         height: auto;
@@ -142,7 +167,8 @@ img{
         padding: 15px;
         width: 90%;
         left: 5%;
-        
+        margin-left: 0% !important;
+        margin-right: 0% !important;
     }
     .right-modal{
         height: auto;
@@ -151,6 +177,7 @@ img{
     .right-modal h1{
         font-size: 1.5rem;
         margin-bottom: 5px;
+        padding-top: 10px;
     }
     .right-modal ul{
         margin-top: 0px;
@@ -193,7 +220,9 @@ img{
         padding: 15px;
         width: 98%;
         left: 0.7%;
-        
+    }
+    .navigation-buttons{
+        display: none;
     }
 }
 @media(max-width: 669px){

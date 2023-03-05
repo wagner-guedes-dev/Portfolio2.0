@@ -7,6 +7,8 @@ import 'aos/dist/aos.css'
 
 import './projetos.css'
 
+import mines from '../../img/mines.jpg'
+import pokedeximg from '../../img/pokedex.jpg'
 import pizzaria from '../../img/pizzaria.png'
 import flixwag from '../../img/flixwag.png'
 import listadetarefas from '../../img/listadetarefas.png'
@@ -16,6 +18,8 @@ import listadetarefas from '../../img/listadetarefas.png'
 import Pizzaria from './ModalProjects/Pizzaria';
 import Flixwag from './ModalProjects/Flixwag';
 import ListaDeTarefas from './ModalProjects/ListaDeTarefas';
+import BetMines from './ModalProjects/BetMines'
+import Pokedex from './ModalProjects/Pokedex'
 
 
 import arrow from '../../img/arrow-rigth.png'
@@ -27,6 +31,28 @@ const Projetos = (props) => {
     AOS.init({duration: 1500})
   }, [])
   
+  const [bet, setBet ] = useState(false)
+    
+    function openBet(){
+    if(bet === false){
+        setBet(true)
+        props.setScrol(true)
+        setPodeClicar(false)
+        props.setMenuDisable(false)
+     }
+    }
+
+    const [pokedex, setPokedex ] = useState(false)
+    
+    function openPokedex(){
+    if(pokedex === false){
+        setPokedex(true)
+        props.setScrol(true)
+        setPodeClicar(false)
+        props.setMenuDisable(false)
+     }
+    }
+
 
   const [pizzaModal, setPizzaModal ] = useState(false)
     
@@ -88,6 +114,47 @@ const Projetos = (props) => {
         <h1 className='title' data-aos='fade-up'><img src={arrow} className='arrow'/> Projetos </h1>
 
             <div className='cards-projects'>
+            {/* project bet */}
+            <div data-aos='fade-up'>
+              <div className='card'  onClick={()=>{if(podeClicar){openBet(); DisableScrollOnMobile()}} }>
+                  
+                  <div className='text'>
+                    <p>BetMines - FreeLancer</p>
+                    <Icon icon="carbon:logo-react" width="1.6rem" color='var(--color-primary)' />
+                    <Icon icon="uiw:css3" width="1.6rem" color='var(--color-primary)' />
+                  </div>
+                  
+                  <img src={mines}/>
+
+                  <div className='ver-mais'>
+                    <button>Ver mais</button>
+                  </div>
+
+              </div>
+            </div>
+            {bet ? (<BetMines modal={bet} setmodal={setBet} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : null}  
+
+            {/* project pokedex */}
+            <div data-aos='fade-up'>
+              <div className='card'  onClick={()=>{if(podeClicar){openPokedex(); DisableScrollOnMobile()}} }>
+                  
+                  <div className='text'>
+                    <p>PokedexSimulator</p>
+                    <Icon icon="carbon:logo-react" width="1.6rem" color='var(--color-primary)' />
+                    <Icon icon="uiw:css3" width="1.6rem" color='var(--color-primary)' />
+                  </div>
+                  
+                  <img src={pokedeximg}/>
+
+                  <div className='ver-mais'>
+                    <button>Ver mais</button>
+                  </div>
+
+              </div>
+            </div>
+            {pokedex ? (<Pokedex modal={pokedex} setmodal={setPokedex} setScrol={props.setScrol} podeClicar={setPodeClicar} menuEnable={props.setMenuDisable}/>) : null}  
+
+
             {/* project pizza */}
             <div data-aos='fade-up'>
               <div className='card'  onClick={()=>{if(podeClicar){openPizza(); DisableScrollOnMobile()}} }>

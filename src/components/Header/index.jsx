@@ -78,16 +78,16 @@ const Header = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickSobre()}>Sobre</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> {if(props.menuDisable){handleClickSobre()}}}>Sobre</a>
                         </li>
                         <li>
-                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickHab()}>Habilidades</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=>{ if(props.menuDisable){handleClickHab()}}}>Habilidades</a>
                         </li>
                         <li>
-                            <a style={{cursor: 'pointer'}} onClick={()=> handleClickProj()}>Projetos</a>
+                            <a style={{cursor: 'pointer'}} onClick={()=> {if(props.menuDisable){handleClickProj()}}}>Projetos</a>
                         </li>
                         <li>
-                            <a style={{cursor: 'pointer'}} href='#contatos'>Contatos</a>
+                            <a style={{cursor: 'pointer'}} href={props.menuDisable ? '#contatos' : null}>Contatos</a>
                         </li>
                     </ul>
                 </nav>

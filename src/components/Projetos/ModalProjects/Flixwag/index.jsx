@@ -18,6 +18,7 @@ import img3 from './img/3.png'
 
 const FlixWag = (props) => {
 
+    const images = [img1, img2, img3]
 
     function closeModal(){
         if(props.modal){
@@ -38,7 +39,6 @@ const FlixWag = (props) => {
     },[])
 
 
-    const images = [img1, img2, img3]
     
   return (
     <div className='modal-projects'>

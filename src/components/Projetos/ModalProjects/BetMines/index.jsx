@@ -78,7 +78,7 @@ const BetMines = (props) => {
             </div>
             
             <div className='buttons-projects responsive-button'>
-                <a href='https://bet-mines-ezx1.vercel.app/' target='_blank'><button className='cv'>Acessar projeto</button></a>
+                <a href='https://bet-mines-ezx1-wagner-guedes-dev.vercel.app/' target='_blank'><button className='cv'>Acessar projeto</button></a>
                 <a href='https://github.com/wagner-guedes-dev/BetMines' target='_blank'><button className='cv'>Acessar repositório</button></a>
                 
                 

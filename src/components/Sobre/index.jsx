@@ -8,6 +8,8 @@ import arrow from '../../img/arrow-rigth.png'
 import computer from '../../img/computer.png'
 
 import { Icon } from '@iconify/react';
+import cvpdf from '../../../public/Cv-Wagner-Guedes-Front-End-Simple.pdf'
+
 
 const Sobre = () => {
 
@@ -47,6 +49,15 @@ const Sobre = () => {
     }, 3000);
   }
 
+  const handleDownload = () => {
+    const url = cvpdf;
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'CV-Wagner-Guedes-Dev-Front-End.pdf');
+    document.body.appendChild(link);
+    link.click();
+  };
+
   return (
     <main>
       <div className='conteudo' >
@@ -76,7 +87,7 @@ const Sobre = () => {
             Meu nome é Wagner, tenho 21 anos e atuo na área de desenvolvimento há mais de 1 ano. Possuo experiência como freelancer, mas estou buscando uma primeira oportunidade no mercado como desenvolvedor Jr.<br/>
             Logo abaixo tem o meu currículo com informçôes mais detalhadas sobre mim. Se preferir, podemos marcar uma call atráves do meu e-mail que está disponibilizado.</p>
             <div style={{display: 'flex', justifyContent: 'center'}}>
-              <button className='cv'>Baixar CV  <Icon icon="material-symbols:download" width="1.3rem" color='#000' /></button>
+              <button className='cv' onClick={handleDownload}>Baixar CV  <Icon icon="material-symbols:download" width="1.3rem" color='#000' /></button>
               <button className='ce' onClick={()=>copiarTexto()}>{msnCopyEmail} {msnCopyEmail === 'Copiar E-mail' ? <Icon icon="material-symbols:content-copy-outline" width="1.3rem" color='#fff' /> : null}</button>
             </div>
             
